@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="JQH">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://chenkun18.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="SpringBoot,SpringBoot项目必备,SpringBoot国际化,SpringBoot I18n" />
+
+
+<meta name="description" content="应用国际化前端国际化
+页面显示和用户界面的本地化
+方案：React Intl、Vue I18n、Angular i18n
+
+后端国际化
+处理与业务逻辑和数据相关的国际化
+
+概念
+java.uti..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    应用国际化 |
+    
+    JQH
+</title>
+
+<link rel="alternate" href="/atom.xml" title="JQH" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    /./img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='jqh'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                从未有如此美妙的开局
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://chenkun18.github.io">
+                        JQH</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端/"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/后端/"><i class="fa "></i>
+                                后端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/其他/"><i class="fa "></i>
+                                其他</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="应用国际化">
+            
+            应用国际化
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a> <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a> <a class="tag-none-link" href="/tags/SpringBoot-I18n/" rel="tag">SpringBoot I18n</a> <a class="tag-none-link" href="/tags/SpringBoot%E5%9B%BD%E9%99%85%E5%8C%96/" rel="tag">SpringBoot国际化</a> <a class="tag-none-link" href="/tags/SpringBoot%E9%A1%B9%E7%9B%AE%E5%BF%85%E5%A4%87/" rel="tag">SpringBoot项目必备</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2024/01/04</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="应用国际化"><a href="#应用国际化" class="headerlink" title="应用国际化"></a>应用国际化</h1><h2 id="前端国际化"><a href="#前端国际化" class="headerlink" title="前端国际化"></a>前端国际化</h2><ul>
+<li>页面显示和用户界面的本地化</li>
+<li>方案：<code>React Intl</code>、<code>Vue I18n</code>、<code>Angular i18n</code></li>
+</ul>
+<h2 id="后端国际化"><a href="#后端国际化" class="headerlink" title="后端国际化"></a>后端国际化</h2><ul>
+<li>处理与业务逻辑和数据相关的国际化</li>
+</ul>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><code>java.util.Locale</code>类：本地化语言类，包含各个国家地区的语言languages</li>
+<li><code>org.springframework.context.MessageSource</code>：其主要是根据<code>Locale</code>信息获取对应的国际化消息的集合，然后根据<code>code</code>获取对应的消息</li>
+<li><code>org.springframework.web.servlet.LocaleResolver</code>：设置当前会话默认的国际化语言</li>
+</ul>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ul>
+<li>1、创建国际化文件<code>resources/i18n/messages</code><ul>
+<li><code>message.properties</code></li>
+<li><code>message_cn_ZH.properties</code></li>
+<li><code>message_en_GB.properties</code></li>
+</ul>
+</li>
+<li>2、yml指定国际化<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">messages:</span></span><br><span class="line">    <span class="attr">basename:</span> <span class="string">i18n/messages</span></span><br><span class="line">    <span class="attr">encoding:</span> <span class="string">UTF-8</span></span><br></pre></td></tr></table></figure></li>
+<li>3、创建国际化表<code>i18n_message</code>（除了可以存在配置文件，也可以存在数据库）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>国家代码</th>
+<th>对应内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>PASSWORD</code></td>
+<td><code>cn_ZH</code></td>
+<td><code>密码</code></td>
+</tr>
+<tr>
+<td><code>PASSWORD</code></td>
+<td><code>en_GB</code></td>
+<td><code>password</code></td>
+</tr>
+<tr>
+<td><code>AGE</code></td>
+<td><code>cn_ZH</code></td>
+<td><code>年龄</code></td>
+</tr>
+<tr>
+<td><code>AGE</code></td>
+<td><code>en_GB</code></td>
+<td><code>age</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li>4、表对应实体类以及Dao<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@TableName(&quot;i18n_message&quot;)</span></span><br><span class="line"><span class="meta">@ApiModel(description = &quot;国际化表&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">I18nMessage</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;属性名&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String code;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;国家代码&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String locale;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;对应内容&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String message;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">I18nMessageMapper</span> <span class="keyword">extends</span> <span class="title class_">BaseMapper</span>&lt;I18nMessage&gt; &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>5、自定义<code>MessageSource</code>类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component(&quot;messageSource&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CustomMessageSource</span> <span class="keyword">extends</span> <span class="title class_">AbstractMessageSource</span> <span class="keyword">implements</span> <span class="title class_">InitializingBean</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> I18nMessageMapper i18nMessageMapper;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 这个是用来缓存数据库中获取到的配置的（可以改到redis）</span></span><br><span class="line"><span class="comment">     * 数据库配置更改的时候可以调用reload方法重新加载</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, Map&lt;String, String&gt;&gt; LOCAL_CACHE = <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Bean属性初始化完成之后执行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterPropertiesSet</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.reload();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 重新加载消息到该类的Map缓存中</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reload</span><span class="params">()</span> &#123;</span><br><span class="line">        LOCAL_CACHE.clear();<span class="comment">// 清除该类的缓存</span></span><br><span class="line">        LOCAL_CACHE.putAll(<span class="built_in">this</span>.loadAllMessageResources());<span class="comment">// 加载所有的国际化资源</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 加载所有的国际化消息资源</span></span><br><span class="line"><span class="comment">     * 同时从数据库和properties文件中读取国际化信息</span></span><br><span class="line"><span class="comment">     * Map&lt;LanguageCode, Map&lt;code, 翻译&gt;&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, Map&lt;String, String&gt;&gt; <span class="title function_">loadAllMessageResources</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// todo 从数据库中查询所有的国际化资源</span></span><br><span class="line">        List&lt;I18nMessage&gt; allLocaleMessage = i18nMessageMapper.selectAllList();</span><br><span class="line">        allLocaleMessage = Optional.OfNullable(allLocaleMessage).orElseGet(() -&gt; <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line">        <span class="comment">// 将查询到的国际化资源转换为 Map&lt;地区码, Map&lt;code, 信息&gt;&gt; 的数据格式</span></span><br><span class="line">        Map&lt;String, Map&lt;String, String&gt;&gt; localeMsgMap = allLocaleMessage.stream().collect(Collectors.groupingBy(I18message::getLocale, Collectors.toMap(I18nMessage::getCode, I18nMessage::getMessage)));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取国家地区List</span></span><br><span class="line">        List&lt;Locale&gt; localeList = localeMsgMap.keySet().stream().map(Locale::<span class="keyword">new</span>).collect(Collectors.toList());</span><br><span class="line">        <span class="keyword">for</span> (Locale locale : localeList) &#123;</span><br><span class="line">            <span class="comment">// todo 按照国家地区来读取本地的国际化资源文件,我们的国际化资源文件放在i18n文件夹之下</span></span><br><span class="line">            <span class="type">ResourceBundle</span> <span class="variable">resourceBundle</span> <span class="operator">=</span> ResourceBundle.getBundle(<span class="string">&quot;i18n/messages&quot;</span>, locale);</span><br><span class="line">            Set&lt;String&gt; keySet = resourceBundle.keySet();<span class="comment">// 获取国际化资源文件中的key</span></span><br><span class="line">            Map&lt;String, String&gt; msgFromFileMap = keySet.stream().collect(Collectors.toMap(Function.identity(), resourceBundle::getString));<span class="comment">// 将 code=信息 格式的数据收集为 Map&lt;code,信息&gt; 的格式</span></span><br><span class="line">            <span class="comment">// 将本地的国际化信息和数据库中的国际化信息合并</span></span><br><span class="line">            Map&lt;String, String&gt; localeFileMsgMap = localeMsgMap.get(locale.getLanguage());</span><br><span class="line">            localeFileMsgMap.putAll(msgFromFileMap);<span class="comment">// 配置文件会覆盖数据库的</span></span><br><span class="line">            localeMsgMap.put(locale.getLanguage(), localeFileMsgMap);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> localeMsgMap;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 缓存Map中get国际化资源</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String <span class="title function_">getSourceFromCacheMap</span><span class="params">(String code, Locale locale)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">language</span> <span class="operator">=</span> ObjectUtils.isEmpty(locale) ? LocaleContextHolder.getLocale().getLanguage() : locale.getLanguage();</span><br><span class="line">        <span class="comment">// 获取缓存中对应语言的所有数据项</span></span><br><span class="line">        Map&lt;String, String&gt; propMap = LOCAL_CACHE.get(language);</span><br><span class="line">        <span class="comment">// 找到直接返回，找不到返回code</span></span><br><span class="line">        <span class="keyword">return</span> Optional.OfNullable(propMap.get(code)).orElse(code);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 实现方法，供AbstractMessageSource.getMessage方法内部使用</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> MessageFormat <span class="title function_">resolveCode</span><span class="params">(String code, Locale locale)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="built_in">this</span>.getSourceFromCacheMap(code, locale);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MessageFormat</span>(msg, locale);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 实现方法，供AbstractMessageSource.getMessage方法内部使用</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> String <span class="title function_">resolveCodeWithoutArguments</span><span class="params">(String code, Locale locale)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.getSourceFromCacheMap(code, locale);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>6、自定义<code>LocaleResolver</code>国际化区域解析器，解析url或者header中的参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CustomLocaleResolver</span> <span class="keyword">implements</span> <span class="title class_">LocaleResolver</span> &#123;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 根据当前请求解析当前请求的本地化信息</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Locale <span class="title function_">resolveLocale</span><span class="params">(HttpServletRequest httpServletRequest)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">l</span> <span class="operator">=</span> httpServletRequest.getParameter(<span class="string">&quot;lang&quot;</span>);<span class="comment">// 请求url参数</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">header</span> <span class="operator">=</span> httpServletRequest.getHeader(<span class="string">&quot;lang&quot;</span>);<span class="comment">// 请求头参数</span></span><br><span class="line">        <span class="type">Locale</span> <span class="variable">locale</span> <span class="operator">=</span> <span class="literal">null</span>;<span class="comment">// 国际化，每一个locale对象都代表一个特定的政治文化，地区和创建方法        </span></span><br><span class="line">        <span class="keyword">return</span> Optional.OfNullable(l).map(i -&gt; &#123;</span><br><span class="line">          <span class="comment">// 判断请求url参数中是否有带lang参数（优先）</span></span><br><span class="line">          String[] split = l.split(<span class="string">&quot;_&quot;</span>);<span class="comment">// 根据下划线分割</span></span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Locale</span>(split[<span class="number">0</span>], split[<span class="number">1</span>]);<span class="comment">// 创建国际化对象</span></span><br><span class="line">        &#125;).orElseGet(() -&gt; &#123;</span><br><span class="line">          <span class="keyword">return</span> Optional.OfNullable(header).map(i -&gt; &#123;</span><br><span class="line">            <span class="comment">// 判断请求头参数中是否有带lang参数</span></span><br><span class="line">            header = header.replaceAll(<span class="string">&quot;\&quot;&quot;</span>,<span class="string">&quot;&quot;</span>);<span class="comment">// 替换为空</span></span><br><span class="line">            String[] split = header.split(<span class="string">&quot;_&quot;</span>);<span class="comment">// 根据下划线分割</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Locale</span>(split[<span class="number">0</span>], split[<span class="number">1</span>]);<span class="comment">// 创建国际化对象</span></span><br><span class="line">          &#125;).orElse(<span class="literal">null</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 设置当前请求、响应的本地化信息</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setLocale</span><span class="params">(HttpServletRequest httpServletRequest, <span class="meta">@Nullable</span> HttpServletResponse httpServletResponse, <span class="meta">@Nullable</span> Locale locale)</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>7、封装工具类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">I18nMessageUtil</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> MessageSource messageSource;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> code 对应messages配置的key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMessage</span><span class="params">(String code)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getMessage(code, <span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> code 对应messages配置的key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> args 数组参数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMessage</span><span class="params">(String code,Object[] args)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getMessage(code, args, <span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> code 对应messages配置的key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> args 数组参数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> defaultMessage 没有设置key的时候的默认值</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMessage</span><span class="params">(String code,Object[] args,String defaultMessage)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> messageSource.getMessage(code, args, defaultMessage, LocaleContextHolder.getLocale());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul>
+<li>1、全局响应状态码（code）对应的消息（msg）国际化<ul>
+<li>法一：工具类中，将<code>MessageSource</code>做静态变量注入，提供几个静态方法进行国际化，在<code>new Result()</code>的时候调用静态方法进行国际化 【<code>@Component</code>+<code>有参构造函数@Autowired注入</code>】<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">I18nMessageUtil</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MessageSource messageSource;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">I18nMessageUtil</span><span class="params">(MessageSource messageSource)</span>&#123;</span><br><span class="line">        I18nMessageUtil.messageSource = messageSource;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> code 对应messages配置的key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getMessage</span><span class="params">(String code)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getMessage(code, <span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> code 对应messages配置的key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> args 数组参数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getMessage</span><span class="params">(String code,Object[] args)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getMessage(code, args, <span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> code 对应messages配置的key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> args 数组参数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> defaultMessage 没有设置key的时候的默认值</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getMessage</span><span class="params">(String code,Object[] args,String defaultMessage)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> messageSource.getMessage(code, args, defaultMessage, LocaleContextHolder.getLocale());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>法二：AOP切面，<code>@AfterReturning</code>中获取返回对象，修改里面的属性值（对象是不能修改的成一个新的滴）</li>
+</ul>
+</li>
+<li>2、接口参数校验结果国际化<ul>
+<li><code>@NotBlank(message=&quot;&#123;xxx_err_code&#125;&quot;)</code></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">JQH</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2024/01/04/%E5%85%B6%E4%BB%96/proxy/" class="pre-post btn btn-default" title='代理'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            代理</span>
+    </a>
+    
+    
+    <a href="/2024/01/02/%E5%90%8E%E7%AB%AF/springboot/EnableAspectJAutoProxy/" class="next-post btn btn-default" title='EnableAspectJAutoProxy'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            EnableAspectJAutoProxy</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9B%BD%E9%99%85%E5%8C%96"><span class="toc-text">应用国际化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E5%9B%BD%E9%99%85%E5%8C%96"><span class="toc-text">前端国际化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E5%9B%BD%E9%99%85%E5%8C%96"><span class="toc-text">后端国际化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">使用场景</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
