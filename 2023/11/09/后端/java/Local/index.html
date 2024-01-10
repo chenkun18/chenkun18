@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="JQH">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://aaajqhaaa.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="java.util类,国际化" />
+
+
+<meta name="description" content="作用
+不同国家的语言、文字、数字、日期都有不同显示
+Local可用根据系统语言对其进行显示1234567891011121314151617181920212223242526272829303..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Local类 |
+    
+    JQH
+</title>
+
+<link rel="alternate" href="/atom.xml" title="JQH" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    /./img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='jqh'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                从未有如此美妙的开局
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://aaajqhaaa.github.io">
+                        JQH</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端/"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/后端/"><i class="fa "></i>
+                                后端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/其他/"><i class="fa "></i>
+                                其他</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Local类">
+            
+            Local类
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/java-util%E7%B1%BB/" rel="tag">java.util类</a> <a class="tag-none-link" href="/tags/%E5%9B%BD%E9%99%85%E5%8C%96/" rel="tag">国际化</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2023/11/09</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><ul>
+<li>不同国家的语言、文字、数字、日期都有不同显示</li>
+<li>Local可用根据系统语言对其进行显示<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.text.NumberFormat;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalDate;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalDateTime;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalTime;</span><br><span class="line"><span class="keyword">import</span> java.time.ZonedDateTime;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="keyword">import</span> java.time.format.FormatStyle;</span><br><span class="line"><span class="keyword">import</span> java.util.Locale;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 获取当前的语言和国家</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">Locale</span> <span class="variable">defaultLocal</span> <span class="operator">=</span> Locale.getDefault();</span><br><span class="line">        <span class="type">String</span> <span class="variable">country</span> <span class="operator">=</span> defaultLocal.getCountry();<span class="comment">// CN</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">displayCountry</span> <span class="operator">=</span> defaultLocal.getDisplayCountry();<span class="comment">// 中国</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">displayCountry1</span> <span class="operator">=</span> defaultLocal.getDisplayCountry(Locale.ENGLISH);<span class="comment">// China</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">iso3Country</span> <span class="operator">=</span> defaultLocal.getISO3Country();<span class="comment">// CHN</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">language</span> <span class="operator">=</span> defaultLocal.getLanguage();<span class="comment">// zh</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">iso3Language</span> <span class="operator">=</span> defaultLocal.getISO3Language();<span class="comment">// zho</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">displayLanguage</span> <span class="operator">=</span> defaultLocal.getDisplayLanguage();<span class="comment">// 中文</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">displayLanguage1</span> <span class="operator">=</span> defaultLocal.getDisplayLanguage(Locale.ENGLISH);<span class="comment">// Chinese</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">displayName</span> <span class="operator">=</span> defaultLocal.getDisplayName();<span class="comment">// 中文 (中国)</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 获取所有的语言及国家</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        Locale[] locales = Locale.getAvailableLocales();</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 获取所有国家</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        String[] countries = Locale.getISOCountries();</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 获取所有的语言</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        String[] languages = Locale.getISOLanguages();</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 获取某个国家对应的标签</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> Locale.US.toLanguageTag();<span class="comment">// en-US</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 获取某个国家对应的语言</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> Locale.ENGLISH.toLanguageTag();<span class="comment">// en</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 构建Local</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">Locale</span> <span class="variable">locale</span> <span class="operator">=</span> Locale.forLanguageTag(<span class="string">&quot;en-US&quot;</span>);<span class="comment">// 使用标签生成Local</span></span><br><span class="line">        <span class="type">Locale</span> <span class="variable">locale2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Locale</span>(<span class="string">&quot;en&quot;</span>);<span class="comment">// 构造函数生成Local</span></span><br><span class="line">        <span class="type">Locale</span> <span class="variable">locale3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Locale</span>(<span class="string">&quot;en&quot;</span>, <span class="string">&quot;US&quot;</span>);<span class="comment">// 构造函数生成Local</span></span><br><span class="line">        <span class="type">Locale</span> <span class="variable">locale4</span> <span class="operator">=</span> Locale.CHINA;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 数字格式化</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">NumberFormat</span> <span class="variable">numberInstance</span> <span class="operator">=</span> NumberFormat.getNumberInstance(Locale.CHINA);</span><br><span class="line">        <span class="type">String</span> <span class="variable">format</span> <span class="operator">=</span> numberInstance.format(<span class="number">123456.78</span>);<span class="comment">// 123,456.78</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 货币格式化</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">NumberFormat</span> <span class="variable">currencyInstance</span> <span class="operator">=</span> NumberFormat.getCurrencyInstance(Locale.CHINA);</span><br><span class="line">        <span class="type">String</span> <span class="variable">format1</span> <span class="operator">=</span> currencyInstance.format(<span class="number">123456.78</span>);<span class="comment">// ￥123,456.78</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 百分比格式化</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">NumberFormat</span> <span class="variable">percentInstance</span> <span class="operator">=</span> NumberFormat.getPercentInstance(Locale.CHINA);</span><br><span class="line">        <span class="type">String</span> <span class="variable">format2</span> <span class="operator">=</span> percentInstance.format(<span class="number">0.2</span>);<span class="comment">//</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 时间日期格式化</span></span><br><span class="line"><span class="comment">         * - 月份和星期的数字应该用本地语言</span></span><br><span class="line"><span class="comment">         * - 年月日的顺序符合本地习惯</span></span><br><span class="line"><span class="comment">         * - 公历可能并不是本地首选表示方法</span></span><br><span class="line"><span class="comment">         * - 需考虑本地的时区</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">LocalDate</span> <span class="variable">localDate</span> <span class="operator">=</span> LocalDate.now();<span class="comment">// 2023-11-09</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format3</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).format(localDate);<span class="comment">// 23-11-9</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format31</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).withLocale(Locale.ENGLISH).format(localDate);<span class="comment">// 11/9/23</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format4</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).format(localDate);<span class="comment">// 2023-11-9</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format41</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.ENGLISH).format(localDate);<span class="comment">// Nov 9, 2023</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format5</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG).format(localDate);<span class="comment">// 2023年11月9日</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format51</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG).withLocale(Locale.ENGLISH).format(localDate);<span class="comment">// November 9, 2023</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format6</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).format(localDate);<span class="comment">// 2023年11月9日 星期四</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format61</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).withLocale(Locale.ENGLISH).format(localDate);<span class="comment">// Thursday, November 9, 2023</span></span><br><span class="line"></span><br><span class="line">        <span class="type">LocalTime</span> <span class="variable">localTime</span> <span class="operator">=</span> LocalTime.now();<span class="comment">// 16:31:18.072</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format7</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(localTime);<span class="comment">// 下午4:29</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format71</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).withLocale(Locale.ENGLISH).format(localTime);<span class="comment">// 4:29 PM</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format8</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM).format(localTime);<span class="comment">// 16:29:49</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format81</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM).withLocale(Locale.ENGLISH).format(localTime);<span class="comment">// 4:29:49 PM</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format9</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedTime(FormatStyle.LONG).format(localTime);<span class="comment">// 下午04时29分49秒</span></span><br><span class="line"><span class="comment">//        String format91 = DateTimeFormatter.ofLocalizedTime(FormatStyle.LONG).withLocale(Locale.ENGLISH).format(localTime);//</span></span><br><span class="line"><span class="comment">//        String format10 = DateTimeFormatter.ofLocalizedTime(FormatStyle.FULL).format(localTime);//</span></span><br><span class="line"><span class="comment">//        String format101 = DateTimeFormatter.ofLocalizedTime(FormatStyle.FULL).withLocale(Locale.ENGLISH).format(localTime);//</span></span><br><span class="line"></span><br><span class="line">        <span class="type">LocalDateTime</span> <span class="variable">localDateTime</span> <span class="operator">=</span> LocalDateTime.now();<span class="comment">// 2023-11-09T16:31:18.072</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format11</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).format(localDateTime);<span class="comment">// 23-11-9 下午4:31</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format111</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).withLocale(Locale.ENGLISH).format(localDateTime);<span class="comment">// 11/9/23 4:31 PM</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format12</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).format(localDateTime);<span class="comment">// 2023-11-9 16:31:18</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format121</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).withLocale(Locale.ENGLISH).format(localDateTime);<span class="comment">// Nov 9, 2023 4:31:18 PM</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format13</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG).format(localDateTime);<span class="comment">// 2023年11月9日 下午04时31分18秒</span></span><br><span class="line"><span class="comment">//        String format131 = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG).withLocale(Locale.ENGLISH).format(localDateTime);//</span></span><br><span class="line"><span class="comment">//        String format14 = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL).format(localDateTime);//</span></span><br><span class="line"><span class="comment">//        String format141 = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL).withLocale(Locale.ENGLISH).format(localDateTime);//</span></span><br><span class="line"></span><br><span class="line">        <span class="type">ZonedDateTime</span> <span class="variable">zonedDateTime</span> <span class="operator">=</span> ZonedDateTime.now();<span class="comment">// 2023-11-09T16:31:54.917+08:00[GMT+08:00]</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format15</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).format(zonedDateTime);<span class="comment">// 23-11-9 下午4:31</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format151</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).withLocale(Locale.ENGLISH).format(zonedDateTime);<span class="comment">// 11/9/23 4:31 PM</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format16</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).format(zonedDateTime);<span class="comment">// 2023-11-9 16:31:54</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format161</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).withLocale(Locale.ENGLISH).format(zonedDateTime);<span class="comment">// Nov 9, 2023 4:31:54 PM</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format17</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG).format(zonedDateTime);<span class="comment">// 2023年11月9日 下午04时31分54秒</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format171</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG).withLocale(Locale.ENGLISH).format(zonedDateTime);<span class="comment">// November 9, 2023 4:31:54 PM GMT+08:00</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format18</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL).format(zonedDateTime);<span class="comment">// 2023年11月9日 星期四 下午04时31分54秒 GMT+08:00</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">format181</span> <span class="operator">=</span> DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL).withLocale(Locale.ENGLISH).format(zonedDateTime);<span class="comment">// Thursday, November 9, 2023 4:31:54 PM GMT+08:00</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">JQH</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2023/11/10/%E5%90%8E%E7%AB%AF/springboot/Logs/" class="pre-post btn btn-default" title='日志'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            日志</span>
+    </a>
+    
+    
+    <a href="/2023/11/09/%E5%90%8E%E7%AB%AF/lombok/Builder/" class="next-post btn btn-default" title='注解@Builder'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            注解@Builder</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-text">作用</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="JQH">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://aaajqhaaa.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="OnlyOffice,OnlyOffice Docker部署Document Server" />
+
+
+<meta name="description" content="描述和功能描述
+OnlyOffice是一个多端协同的 Office 办公套件，结合了文本文档、电子表格、演示文稿和表单的编辑器。
+后端：JavaScript语言和Node.js构建服务器端脚本
+..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    OnlyOffice介绍及docker部署Document Server |
+    
+    JQH
+</title>
+
+<link rel="alternate" href="/atom.xml" title="JQH" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    /./img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='jqh'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                从未有如此美妙的开局
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://aaajqhaaa.github.io">
+                        JQH</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端/"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/后端/"><i class="fa "></i>
+                                后端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/其他/"><i class="fa "></i>
+                                其他</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="OnlyOffice介绍及docker部署Document Server">
+            
+            OnlyOffice介绍及docker部署Document Server
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/OnlyOffice/" rel="tag">OnlyOffice</a> <a class="tag-none-link" href="/tags/OnlyOffice-Docker%E9%83%A8%E7%BD%B2Document-Server/" rel="tag">OnlyOffice Docker部署Document Server</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2023/11/02</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="描述和功能"><a href="#描述和功能" class="headerlink" title="描述和功能"></a>描述和功能</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><ul>
+<li>OnlyOffice是一个多端协同的 Office 办公套件，结合了文本文档、电子表格、演示文稿和表单的编辑器。</li>
+<li>后端：JavaScript语言和Node.js构建服务器端脚本</li>
+<li>前端：使用HTML5呈现文档元素。<ul>
+<li>编辑器的技术基础是HTML5 Canvas。画布是一个包含不同绘图元素的容器，如线条、形状、图形和框架。HTML结构中的每个对象都是独立处理的，而画布结构的其余部分不受该特定对象的操作的影响。这有助于保持高精度的显示，使内容浏览器和操作系统不可知，并在查看、编辑或打印文档时提供平等的文档呈现。</li>
+</ul>
+</li>
+<li>核心格式组是OOXML，它使套件与DOCX、XLSX和PPTX文件完全兼容，而其他格式则通过内部转换进行处理。</li>
+<li>具有<code>实时协同编辑</code>、<code>评论</code>、<code>在线聊天</code>、<code>版本历史记录</code>、<code>跟踪更改</code>和<code>文档比较</code>等协作工具，并支持各种类型的共享权限，包括<code>完全访问</code>、<code>仅查看</code>、<code>评论</code>、<code>审阅</code>、<code>填写表单</code>和<code>自定义筛选</code>。</li>
+<li>可以使用基于API通信或WOPI协议的集成应用程序在第三方环境中集成。</li>
+<li>可以使用不同的方法在客户端的体系结构上进行部署，包括Windows和Linux服务器安装选项、Docker、Pod</li>
+</ul>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ul>
+<li>服务体系结构在OnlyOffice文档部署模型的<code>数据安全性</code>、<code>性能</code>和<code>灵活性</code>方面发挥着至关重要的作用。</li>
+<li>客户端：浏览器中调用一个完整的文档编辑器应用程序，将大部分流程负载转移到客户端</li>
+<li>服务器端只处理<code>保存</code>、<code>传输文件更改</code>和<code>拼写检查</code>等过程。</li>
+<li>体系结构中的每个服务都可以单独托管在一个集群中，这还增加了容错能力，并允许根据环境构建自定义服务映射。</li>
+<li>服务架构如下：<br><img src="/2023/11/02/%E5%85%B6%E4%BB%96/onlyoffice/001architecture.png" alt="001architecture.png"></li>
+<li>这样的架构设计使得一台<code>32GB RAM的8核</code>机器足以容纳<code>1000个同时编辑的文档</code>，假设每4秒对所有文档进行一次更改（1000个连接每秒250次更改）。</li>
+</ul>
+<h2 id="编辑功能"><a href="#编辑功能" class="headerlink" title="编辑功能"></a>编辑功能</h2><h3 id="支持的电子文件格式"><a href="#支持的电子文件格式" class="headerlink" title="支持的电子文件格式"></a>支持的电子文件格式</h3><p>支持以下类型的格式用于查看和编辑：</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">查看</th>
+<th align="left">编辑</th>
+<th align="left">下载</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">文本文档</td>
+<td align="left">DOC, DOCX, DOTX, FB2, ODT, OTT, RTF, TXT, PDF, PDF&#x2F;A, HTML, EPUB, XPS, DjVu, XML, DOCXF, OFORM</td>
+<td align="left">DOC, DOCX, DOTX, FB2, ODT, OTT, RTF, TXT, HTML, EPUB, XML, DOCXF, OFORM</td>
+<td align="left">DOCX, DOTX, FB2, ODT, OTT, RTF, TXT, PDF, PDF&#x2F;A, HTML, EPUB, DOCXF, OFORM</td>
+</tr>
+<tr>
+<td align="left">电子表格</td>
+<td align="left">XLS, XLSX, XLTX, ODS,OTS, CSV</td>
+<td align="left">XLS, XLSX, XLTX, ODS,OTS, CSV</td>
+<td align="left">XLSX, XLTX, ODS,OTS, CSV, PDF,PDF&#x2F;A</td>
+</tr>
+<tr>
+<td align="left">演讲</td>
+<td align="left">PPT, PPTX, POTX, ODP, OTP, PPSX</td>
+<td align="left">PPT, PPTX, POTX, ODP, OTP</td>
+<td align="left">PPTX, POTX, ODP, OTP, PDF, PDF&#x2F;A, PNG, JPG</td>
+</tr>
+</tbody></table>
+<h2 id="协作功能"><a href="#协作功能" class="headerlink" title="协作功能"></a>协作功能</h2><ul>
+<li>允许在集成平台内的任意数量的用户之间协作编辑文档。</li>
+<li>由于OnlyOffice Docs的架构意味着编辑器的客户端性能，在同一服务器上处理同一文档时，每个用户都可以独立于所有其他用户激活任何功能或选择任何模式。</li>
+<li>这显著改进了许多方面的工作，包括使用<code>撤消</code>和<code>重做</code>命令独立恢复操作。这种方法还最小化了服务器负载，使设置变得轻量级。</li>
+<li>协作功能包括：<ul>
+<li>灵活的共享权限：仅查看、完全访问、审阅、注释、填写表单、自定义筛选器。</li>
+<li>两种协同编辑模式：快速（实时）和严格（段落锁定）</li>
+<li>跟踪变化；</li>
+<li>评论；</li>
+<li>在评论中提及用户；</li>
+<li>内置聊天；</li>
+<li>版本和修订控制（版本历史）。</li>
+</ul>
+</li>
+<li>通过独立使用所有功能和协作模式，来自不同设备和客户端（包括网络套件、桌面和移动应用程序）的大量用户之间可以进行协作。</li>
+<li>尽管大多数操作都是在OnlyOffice文档（文档服务器）中执行的，但有些功能在集成中依赖于与用户管理系统的通信。版本历史记录和提及等功能的可用性目前在每个集成中都有所不同。</li>
+</ul>
+<h2 id="数据安全"><a href="#数据安全" class="headerlink" title="数据安全"></a>数据安全</h2><ul>
+<li>在设计上是安全的，这得益于自托管的部署模型。此外，在任何基础结构中存储和编辑文件时，它都提供了多种保护数据的功能：<ul>
+<li>为了保护流量，OnlyOffice使用HTTPS运行，而文档编辑连接则使用JWT进行额外保护。</li>
+<li>共享中提供灵活的权限：使用完全访问、只读、评论、审阅或填写表单权限，允许或不允许修改电子表格中的筛选器，如果您愿意，还可以限制下载、复制和打印。</li>
+<li>您还可以应用水印，以避免未经授权重新分发您的内容。</li>
+<li>文件加密可用于文件和电子表格，包括保护整个工作簿和电子表格中的单独表格。</li>
+</ul>
+</li>
+<li>OnlyOffice具有内置功能，可帮助企业遵守HIPAA和欧盟隐私法规。</li>
+</ul>
+<h2 id="接口定制"><a href="#接口定制" class="headerlink" title="接口定制"></a>接口定制</h2><p>可以自定义OnlyOffice文档的界面，以增强使用套件时的体验。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">界面主题</td>
+<td align="left">可以将界面主题分别设置为<code>暗</code>、<code>亮</code>和<code>经典</code>灯光。在某些集成中，可以在管理级别控制主题设置。</td>
+</tr>
+<tr>
+<td align="left">界面和文档缩放</td>
+<td align="left">编辑器支持100%、125%、150%、175%和200%的自动缩放。 手动文档缩放选项的范围从50%到200%。</td>
+</tr>
+<tr>
+<td align="left">工具栏、状态栏和标尺</td>
+<td align="left">可以隐藏主工具栏、状态栏和标尺以展开工作区域。</td>
+</tr>
+<tr>
+<td align="left">工具栏布局*</td>
+<td align="left">在设置中，可以在完整和紧凑的工具栏布局之间切换，并更改选项卡的颜色。</td>
+</tr>
+<tr>
+<td align="left">附加选项（适用于开发人员）</td>
+<td align="left">脚本级配置允许调整按钮和命令、公司和联系人信息、徽标等的显示。</td>
+</tr>
+</tbody></table>
+<h1 id="整合机制"><a href="#整合机制" class="headerlink" title="整合机制"></a>整合机制</h1><h2 id="通过基于API的连接器进行集成"><a href="#通过基于API的连接器进行集成" class="headerlink" title="通过基于API的连接器进行集成"></a>通过基于API的连接器进行集成</h2><ul>
+<li>基于API的集成是将OnlyOffice文档连接到文件存储和共享环境的一种随意方式，包括同步和共享服务、内容管理系统（CMS）和学习管理系统（LMS）。目前大多数可用的连接器都是基于API的。</li>
+<li>开放式API允许构建应用程序，以集成OnlyOffice独有的任何功能，或将自定义重新构建功能集成到连接的存储中，为用户提供完整的体验。</li>
+<li>基于API的集成方案<br><img src="/2023/11/02/%E5%85%B6%E4%BB%96/onlyoffice/002integration.png" alt="002integration.png"></li>
+<li>OnlyOffice文档（文档服务器）与第三方服务的集成需要一个额外的应用程序，该应用程序将数据转换为兼容的格式。此角色由连接器扮演。OnlyOffice团队创建自己的官方连接器，并协助合作伙伴和第三方开发人员创建此类应用程序。</li>
+<li>集成应用程序结构<br><img src="/2023/11/02/%E5%85%B6%E4%BB%96/onlyoffice/003structure.png" alt="003structure.png"></li>
+<li>通过基于API的集成提供的功能*：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">功能</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">支持格式</td>
+<td align="left">用于查看和编辑：DOCX、XLSX、PPTX、PPSX、OFORM、DOCXF 仅供查看：PDF、DJVU、TXT、CSV、ODT、ODS、ODP、DOC、XLS、PPT、PPS、EPUB、RTF、HTML、HTM、MHT、XPS</td>
+</tr>
+<tr>
+<td align="left">协作模式</td>
+<td align="left">在实时和段落锁定协同编辑模式之间切换。</td>
+</tr>
+<tr>
+<td align="left">自定义</td>
+<td align="left">为编辑器设置界面语言和主题、隐藏聊天菜单按钮、更改“关于”部分中的信息、界面自定义，如调整标题和工具栏、品牌、连接插件</td>
+</tr>
+<tr>
+<td align="left">基本功能</td>
+<td align="left">查看、编辑、共同编辑、移动查看和编辑、简化查看（嵌入式）</td>
+</tr>
+<tr>
+<td align="left">其他操作：方法</td>
+<td align="left">以所选格式下载文件、将文件标记为收藏夹、显示带有消息的工具提示</td>
+</tr>
+<tr>
+<td align="left">其他操作：事件</td>
+<td align="left">关闭编辑器、打开文件位置、将文件从查看模式切换到编辑模式、重命名文档、管理文档访问权限、打开版本历史记录、插入存储中的图像、邮件合并、与存储中的文档进行比较、在书签位置获取打开文件的链接、以所需格式保存文件、在评论中提及其他用户、创建新文档</td>
+</tr>
+<tr>
+<td align="left">安全</td>
+<td align="left">IP地址白名单、使用JWT验证请求和防止未经授权访问</td>
+</tr>
+<tr>
+<td align="left">文档权限</td>
+<td align="left">查看、编辑、审查（文本文件）、评论、填写表格、修改内容控件（文本文档）、修改过滤器（电子表格）、复制到剪贴板、下载、打印、重命名</td>
+</tr>
+<tr>
+<td align="left">局限性</td>
+<td align="left">编辑器中提供的所有功能都可以集成。</td>
+</tr>
+</tbody></table>
+<h1 id="实战开发"><a href="#实战开发" class="headerlink" title="实战开发"></a>实战开发</h1><h2 id="OnlyOffice社区版"><a href="#OnlyOffice社区版" class="headerlink" title="OnlyOffice社区版"></a>OnlyOffice社区版</h2><ul>
+<li>文档服务器：<code>Document Server</code></li>
+<li>社区服务器：<code>Community Server</code></li>
+<li>邮件服务器：<code>Mail Server</code></li>
+</ul>
+<h2 id="docker部署文档服务器"><a href="#docker部署文档服务器" class="headerlink" title="docker部署文档服务器"></a>docker部署文档服务器</h2><ul>
+<li><p>【<a target="_blank" rel="noopener" href="https://helpcenter.onlyoffice.com/installation/docs-community-install-docker.aspx">官网教程</a>】</p>
+</li>
+<li><p>1、拉取镜像：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull onlyoffice/documentserver</span><br></pre></td></tr></table></figure></li>
+<li><p>2、启动容器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd -p 9000:80 --restart=always </span><br><span class="line">-v D:\workNew\study\onlyoffice\DocumentServer\logs:/var/log/onlyoffice # 日志数据</span><br><span class="line">-v D:\workNew\study\onlyoffice\DocumentServer\data:/var/www/onlyoffice/Data # ssl证书</span><br><span class="line">-v D:\workNew\study\onlyoffice\DocumentServer\lib:/var/lib/onlyoffice # 文件缓存数据</span><br><span class="line">-v D:\workNew\study\onlyoffice\DocumentServer\db:/var/lib/postgresql # 数据库</span><br><span class="line">-e JWT_SECRET=my_jwt_secret #  JWT密钥，不设置会自动生成，也可以关闭【-e JWT_ENABLED=false】</span><br><span class="line">onlyoffice/documentserver # 镜像名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入容器：<code>docker exec -it ID /bin/bash</code></p>
+</li>
+<li><p>启动所有的内置服务：<code>supervisorctl restart all</code></p>
+</li>
+<li><p>退出容器：<code>exit</code></p>
+</li>
+<li><p>访问：<code>http://IP:9000/</code><br><img src="/2023/11/02/%E5%85%B6%E4%BB%96/onlyoffice/004page.png" alt="004page.png"></p>
+</li>
+<li><p>页面包括</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://api.onlyoffice.com/editors/basic">开发文档</a></li>
+<li>查看密钥：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec ID /var/www/onlyoffice/documentserver/npm/json -f /etc/onlyoffice/documentserver/local.json &#x27;services.CoAuthoring.secret.session.string&#x27;</span><br></pre></td></tr></table></figure></li>
+<li>启动example服务：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec ID sudo supervisorctl start ds:example</span><br></pre></td></tr></table></figure></li>
+<li>设置example服务自动启动：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec ID sudo sed &#x27;s,autostart=false,autostart=true,&#x27; -i /etc/supervisor/conf.d/ds-example.conf</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>服务列表（都是通过pkg打包成可执行文件，摆脱node环境的依赖）</p>
+<ul>
+<li><code>ds:converter</code>：转换器</li>
+<li><code>ds:docservice</code>：文档服务</li>
+<li><code>ds:example</code>：例子</li>
+<li><code>ds:metrics</code></li>
+</ul>
+</li>
+<li><p>服务占用端口：</p>
+<ul>
+<li><code>nginx</code>：<code>80</code></li>
+<li><code>rabbitmq</code>：<code>5672</code>、<code>25672</code>、<code>4369</code></li>
+<li><code>postgres</code>：<code>5432</code></li>
+<li><code>docservice</code>: <code>8000</code></li>
+<li><code>example</code>：<code>3000</code><br><img src="/2023/11/02/%E5%85%B6%E4%BB%96/onlyoffice/005port.png" alt="005port.png"></li>
+</ul>
+</li>
+</ul>
+<h2 id="example测试"><a href="#example测试" class="headerlink" title="example测试"></a>example测试</h2><p><img src="/2023/11/02/%E5%85%B6%E4%BB%96/onlyoffice/006example.png" alt="006example.png"><br><img src="/2023/11/02/%E5%85%B6%E4%BB%96/onlyoffice/007example-page.png" alt="007example-page.png"></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">JQH</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2023/11/03/%E5%85%B6%E4%BB%96/onlyOfficeDocumentServer/" class="pre-post btn btn-default" title='OnlyOffice Document Server教程'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            OnlyOffice Document Server教程</span>
+    </a>
+    
+    
+    <a href="/2023/11/01/%E5%85%B6%E4%BB%96/hexo/" class="next-post btn btn-default" title='hexo博客搭建'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            hexo博客搭建</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8A%9F%E8%83%BD"><span class="toc-text">描述和功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0"><span class="toc-text">描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-text">结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E5%8A%9F%E8%83%BD"><span class="toc-text">编辑功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E7%9A%84%E7%94%B5%E5%AD%90%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-text">支持的电子文件格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8F%E4%BD%9C%E5%8A%9F%E8%83%BD"><span class="toc-text">协作功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8"><span class="toc-text">数据安全</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E5%AE%9A%E5%88%B6"><span class="toc-text">接口定制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B4%E5%90%88%E6%9C%BA%E5%88%B6"><span class="toc-text">整合机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%9F%BA%E4%BA%8EAPI%E7%9A%84%E8%BF%9E%E6%8E%A5%E5%99%A8%E8%BF%9B%E8%A1%8C%E9%9B%86%E6%88%90"><span class="toc-text">通过基于API的连接器进行集成</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91"><span class="toc-text">实战开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OnlyOffice%E7%A4%BE%E5%8C%BA%E7%89%88"><span class="toc-text">OnlyOffice社区版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">docker部署文档服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#example%E6%B5%8B%E8%AF%95"><span class="toc-text">example测试</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
